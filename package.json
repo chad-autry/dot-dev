@@ -1,7 +1,7 @@
 {
-  "name": "react-bp",
+  "name": "dot-dev",
   "version": "1.0.0",
-  "description": "react boilerplate",
+  "description": "Personal webpage based on frontend boilerplate",
   "scripts": {
     "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:auth && npm run copy:jquery&& webpack --config ./webpack-prod.config.js",
     "eslint:fix": "eslint --fix './src/**/*.js' './src/**/*.jsx'",
@@ -13,14 +13,10 @@
     "start": "webpack-dev-server --content-base ./target/webapp --port 8080",
     "precommit": "lint-staged"
   },
-  "keywords": [
-    "react",
-    "boilerplate"
-  ],
   "author": {
     "name": "Chad Autry",
     "email": "chad.autry@gmail.com",
-    "url": "http://chad-autry.github.io/"
+    "url": "https://chad.autry.dev"
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
