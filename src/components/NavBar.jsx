@@ -44,7 +44,7 @@ const NavBar = class NavBar extends React.Component {
             />
           </div>
           <div className="navbar-brand">
-            <i className="fa fa-cube" /> react-bp
+            <i className="fa fa-code" /> Chad Autry
           </div>
         </div>
         {/*Programatically controll hiding the collapse using react.
@@ -60,16 +60,12 @@ const NavBar = class NavBar extends React.Component {
               <i className="fa fa-home" /> Home
             </NavItem>
             <li>
-              <a href="https://github.com/chad-autry/react-bp">
+              <a href="https://github.com/chad-autry">
                 <i className="fa fa-github-alt" /> Github
               </a>
             </li>
-            <li>
-              <a href="https://github.com/chad-autry/react-bp/issues">
-                <i className="fa fa-comments" /> Support
-              </a>
-            </li>
           </ul>
+          {/*
           <ul className="nav navbar-nav navbar-right">
             <NavItem
               to={this.props.isAuthenticated ? "/userMgmnt" : "/login"}
@@ -84,6 +80,7 @@ const NavBar = class NavBar extends React.Component {
                 : "Logon "}
             </NavItem>
           </ul>
+          */}
         </div>
       </div>
     );

@@ -4,7 +4,7 @@ const Footer = () => (
   <footer className="footer">
     <div className="footer-inner">
       <p>
-        <i className="fa fa-copyright" /> 2016{" "}
+        <i className="fa fa-copyright" /> 2019{" "}
         <a href="http://chad-autry.github.io/">Chad Autry</a>.
       </p>
     </div>
