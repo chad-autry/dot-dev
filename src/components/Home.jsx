@@ -9,6 +9,20 @@ const Home = class Home extends React.Component {
         </div>
         <div className="panel panel-default">
             <div className="panel-heading">
+                <h3 className="panel-title">npm audit 5/5/2019</h3>
+            </div>
+            <div className="panel-body">
+                Updated many of the dependencies on my react-bp frontend project based on npm audit. Included upgrading webpack to 4.X.
+                <br/>
+                <br/>
+                Investigated upgrading bootstrap to 4.X, but decided to just take the latest 3.X.
+                <br/>
+                <br/>
+                Still to come: webpack-cli which is needed for webpack-dev-server is breaking Travis-CI and my react-bp gh-pages deployment. I still need to cherry-pick the commits to this project.
+            </div>
+        </div>
+        <div className="panel panel-default">
+            <div className="panel-heading">
                 <h3 className="panel-title">First Post 5/4/2019</h3>
             </div>
             <div className="panel-body">
