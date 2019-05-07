@@ -10,7 +10,7 @@
     "copy:HTML": "copyfiles -f ./src/index.html ./target/webapp",
     "copy:jquery": "copyfiles -f ./node_modules/jquery/dist/jquery.min.js ./target/webapp",
     "less": "lessc ./src/less/main.less > ./target/webapp/styles.css",
-    "start": "webpack-dev-server --content-base ./target/webapp --port 8080",
+    "start": "webpack-dev-server  --config ./webpack-prod.config.js --mode development --content-base ./target/webapp --port 8080",
     "precommit": "lint-staged"
   },
   "author": {
