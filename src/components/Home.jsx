@@ -9,6 +9,14 @@ const Home = class Home extends React.Component {
         </div>
         <div className="panel panel-default">
             <div className="panel-heading">
+                <h3 className="panel-title">Reapply updates II 5/7/2019</h3>
+            </div>
+            <div className="panel-body">
+                Applied the updates to my hexagonal.space client
+            </div>
+        </div>
+        <div className="panel panel-default">
+            <div className="panel-heading">
                 <h3 className="panel-title">Reapply updates 5/6/2019</h3>
             </div>
             <div className="panel-body">
