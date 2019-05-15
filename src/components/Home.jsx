@@ -9,6 +9,15 @@ const Home = class Home extends React.Component {
         </div>
         <div className="panel panel-default">
             <div className="panel-heading">
+                <h3 className="panel-title">User Creation and Terms of Service 5/14/2019</h3>
+            </div>
+            <div className="panel-body">
+                Began continuing the user creation work for react-bp which I started awhile back.
+                Created the Terms of Service page. Need to make it more generic. Need to import and hook up the FetchService.
+            </div>
+        </div>
+        <div className="panel panel-default">
+            <div className="panel-heading">
                 <h3 className="panel-title">Reapply updates II 5/7/2019</h3>
             </div>
             <div className="panel-body">
