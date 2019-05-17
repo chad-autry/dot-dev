@@ -9,6 +9,15 @@ const Home = class Home extends React.Component {
         </div>
         <div className="panel panel-default">
             <div className="panel-heading">
+                <h3 className="panel-title">FetchService 5/15/2019</h3>
+            </div>
+            <div className="panel-body">
+                Brought in the fetch service, and show the policy page when using the username/pwd.
+                Idea is if the user doesn't exist forward to policy page to accept and create.
+            </div>
+        </div>
+        <div className="panel panel-default">
+            <div className="panel-heading">
                 <h3 className="panel-title">User Creation and Terms of Service 5/14/2019</h3>
             </div>
             <div className="panel-body">
