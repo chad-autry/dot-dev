@@ -1,5 +1,7 @@
 import { Link, Redirect } from "react-router-dom";
 import React from "react";
+import LoadingSpinner from "./LoadingSpinner.jsx";
+import LoadingOverlay from "react-loading-overlay";
 
 const Login = class Login extends React.Component {
   constructor(props) {
@@ -10,16 +12,27 @@ const Login = class Login extends React.Component {
     if (this.props.isAuthenticated) {
       return <Redirect to="/home" />;
     } else if (this.props.pendingUserCreation) {
-      return <Redirect to="/tos" />;
+      return <Redirect to="/policy" />;
     }
+    const logingOn = this.props.logingOn;
     return (
-      <div className="container">
+      <LoadingOverlay
+        active={logingOn}
+        styles={{
+          overlay: base => ({
+            ...base,
+            background: "rgba(0, 0, 0, 0.5)"
+          })
+        }}
+        spinner={<LoadingSpinner />}
+        text="Loading...">
         <div className="center-form panel">
           <div className="panel-body">
             <h2 className="text-center">Log in </h2>
             <h6 className="text-center">
               react-bp has a mock backend which is hard coded to log you in as
-              &apos;John Doe&apos;{" "}
+              &apos;John Doe&apos; when using google sign in. It will act as if
+              the user does not exist when using username + password{" "}
             </h6>
             <div className="form-group has-feedback">
               <input
@@ -39,7 +52,15 @@ const Login = class Login extends React.Component {
             </div>
             <button
               className="btn btn-lg btn-block btn-success"
-              onClick={() => this.props.authService.login("google")}>
+              onClick={() =>
+                this.props.fetchService.getJson(
+                  "/backend/login",
+                  "application/json",
+                  json => {
+                    this.props.authService.setToken(json.token);
+                  }
+                )
+              }>
               Log in
             </button>
             <br />
@@ -60,7 +81,7 @@ const Login = class Login extends React.Component {
             </button>
           </div>
         </div>
-      </div>
+      </LoadingOverlay>
     );
   }
 };

@@ -6,10 +6,14 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import AppRoot from "./components/AppRoot.jsx";
 import authjwt from "client-auth-jwt/src/Auth.js";
 
+import FetchService from "./FetchService.js";
+
 //This function executes immediately
 (function() {
   let authService = new authjwt();
 
+  let fetchService = new FetchService();
+  fetchService.setAuthService(authService);
   // Configure the authService
   authService.ProviderOAuthConfigs.google.clientId =
     "34478033913-h13qnl7mfako0ean3uv6c9s6f8ujafki.apps.googleusercontent.com";
@@ -24,6 +28,7 @@ import authjwt from "client-auth-jwt/src/Auth.js";
           render={routeProps => (
             <AppRoot
               location={routeProps.location}
+              fetchService={fetchService}
               authService={authService}
               {...routeProps}
             />
