@@ -16,9 +16,9 @@ import FetchService from "./FetchService.js";
   fetchService.setAuthService(authService);
   // Configure the authService
   authService.ProviderOAuthConfigs.google.clientId =
-    "34478033913-h13qnl7mfako0ean3uv6c9s6f8ujafki.apps.googleusercontent.com";
+    "176831542781-a84ubli50hh7j7hguv57lcr55mnfcutn.apps.googleusercontent.com";
   authService.ProviderOAuthConfigs.google.redirectUri =
-    window.location.origin + "/googleStaticAuth.html";
+    window.location.origin + "/auth";
   authService.originRmiService = { login: () => true };
   //This function is attached to execute when the window loads
   document.addEventListener("DOMContentLoaded", function() {

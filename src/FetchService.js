@@ -57,11 +57,14 @@ const FetchService = class FetchService {
     }
     try {
       //Since JS is single threaded, no need to worry the token can change after checking isAuthenticated
-      let query = Object.keys(params)
-        .map(k => encodeURIComponent(k) + "=" + encodeURIComponent(params[k]))
-        .join("&");
-      if (query) {
-        query = "?" + query;
+      let query = "";
+      if (params) {
+        query = Object.keys(params)
+          .map(k => encodeURIComponent(k) + "=" + encodeURIComponent(params[k]))
+          .join("&");
+        if (query) {
+          query = "?" + query;
+        }
       }
       let urlWithQuery = url + query;
       fetch(urlWithQuery, {
@@ -94,11 +97,16 @@ const FetchService = class FetchService {
     try {
       //Since JS is single threaded, no need to worry the token can change after checking isAuthenticated
       if (this.authService.isAuthenticated()) {
-        let query = Object.keys(params)
-          .map(k => encodeURIComponent(k) + "=" + encodeURIComponent(params[k]))
-          .join("&");
-        if (query) {
-          query = "?" + query;
+        let query = "";
+        if (params) {
+          query = Object.keys(params)
+            .map(
+              k => encodeURIComponent(k) + "=" + encodeURIComponent(params[k])
+            )
+            .join("&");
+          if (query) {
+            query = "?" + query;
+          }
         }
         let urlWithQuery = url + query;
         fetch(urlWithQuery, {
@@ -139,11 +147,16 @@ const FetchService = class FetchService {
     try {
       //Since JS is single threaded, no need to worry the token can change after checking isAuthenticated
       if (this.authService.isAuthenticated()) {
-        let query = Object.keys(params)
-          .map(k => encodeURIComponent(k) + "=" + encodeURIComponent(params[k]))
-          .join("&");
-        if (query) {
-          query = "?" + query;
+        let query = "";
+        if (params) {
+          Object.keys(params)
+            .map(
+              k => encodeURIComponent(k) + "=" + encodeURIComponent(params[k])
+            )
+            .join("&");
+          if (query) {
+            query = "?" + query;
+          }
         }
         let urlWithQuery = url + query;
         fetch(urlWithQuery, {

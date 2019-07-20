@@ -129,7 +129,7 @@ const ButtonsDiv = class ButtonsDiv extends React.Component {
                 }, true)
               ) {
                 this.props.fetchService.getJsonWithAuth(
-                  "/backend/policyAccepted",
+                  "/newUser",
                   "application/json",
                   json => {
                     //Success

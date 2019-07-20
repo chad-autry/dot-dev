@@ -71,8 +71,8 @@ const NavBar = class NavBar extends React.Component {
                 this.props.isAuthenticated
                   ? "/userMgmnt"
                   : this.props.pendingUserCreation
-                    ? "/policy"
-                    : "/login"
+                  ? "/policy"
+                  : "/login"
               }
               location={this.props.location}>
               <i
@@ -80,8 +80,8 @@ const NavBar = class NavBar extends React.Component {
                   this.props.isAuthenticated
                     ? "fa fa-user"
                     : this.props.pendingUserCreation
-                      ? "fa fa-plus"
-                      : "fa fa-sign-in"
+                    ? "fa fa-plus"
+                    : "fa fa-sign-in"
                 }
               />{" "}
               {this.props.isAuthenticated || this.props.pendingUserCreation
