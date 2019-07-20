@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Personal webpage based on frontend boilerplate",
   "scripts": {
-    "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:auth && npm run copy:jquery&& webpack --config ./webpack-prod.config.js",
+    "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:auth && npm run copy:jquery&& webpack --mode production --config ./webpack-prod.config.js",
     "eslint:fix": "eslint --fix './src/**/*.js' './src/**/*.jsx'",
     "clean": "rimraf ./target",
     "copy:auth": "copyfiles -f ./src/googleStaticAuth.html ./target/webapp",

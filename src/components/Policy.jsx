@@ -1,4 +1,4 @@
-import Redirect from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import React from "react";
 import LoadingSpinner from "./LoadingSpinner.jsx";
 import LoadingOverlay from "react-loading-overlay";
