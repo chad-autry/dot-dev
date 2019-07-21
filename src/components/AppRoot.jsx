@@ -21,7 +21,7 @@ const AppRoot = class AppRoot extends React.Component {
         isAuthenticated: isAuthenticated && !pendingUserCreation
       });
     });
-    this.props.fetchService.listen("/backend/policyAccepted", beginRequest => {
+    this.props.fetchService.listen("/newUser", beginRequest => {
       this.setState({
         fetchingPolicyAccepted: beginRequest
       });

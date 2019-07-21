@@ -60,7 +60,7 @@ const FetchService = class FetchService {
       let query = "";
       if (params) {
         query = Object.keys(params)
-          .map(k => encodeURIComponent(k) + "=" + encodeURIComponent(params[k]))
+          .map(k => encodeURIComponent(k) + "=" + encodeURIComponent(JSON.stringify(params[k])))
           .join("&");
         if (query) {
           query = "?" + query;
@@ -101,7 +101,7 @@ const FetchService = class FetchService {
         if (params) {
           query = Object.keys(params)
             .map(
-              k => encodeURIComponent(k) + "=" + encodeURIComponent(params[k])
+              k => encodeURIComponent(k) + "=" + encodeURIComponent(JSON.stringify(params[k]))
             )
             .join("&");
           if (query) {
@@ -151,7 +151,7 @@ const FetchService = class FetchService {
         if (params) {
           Object.keys(params)
             .map(
-              k => encodeURIComponent(k) + "=" + encodeURIComponent(params[k])
+              k => encodeURIComponent(k) + "=" + encodeURIComponent(JSON.stringify(params[k]))
             )
             .join("&");
           if (query) {
