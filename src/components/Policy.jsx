@@ -140,7 +140,13 @@ const ButtonsDiv = class ButtonsDiv extends React.Component {
                     // eslint-disable-next-line no-console
                     console.log(JSON.parse(json));
                   },
-                  { acceptedPolicy: this.props.policies }
+                  {
+                    acceptedPolicy: this.props.policies
+                      .filter(policy => policy.checked)
+                      .map(value => {
+                        return { name: value.name, version: value.version };
+                      })
+                  }
                 );
               }
             }}>

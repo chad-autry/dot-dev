@@ -33,8 +33,8 @@ const Login = class Login extends React.Component {
             <button
               className="btn btn-block btn-google"
               onClick={() => this.props.authService.authenticate("google")}>
-              <i className="fa fa-google"> </i>
-              {' '}Log in or create new user with Google
+              <i className="fa fa-google"> </i> Log in or create new user with
+              Google
             </button>
           </div>
         </div>
