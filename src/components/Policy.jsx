@@ -144,9 +144,9 @@ const ButtonsDiv = class ButtonsDiv extends React.Component {
                     acceptedPolicy: this.props.policies
                       .filter(policy => policy.checked)
                       .reduce((accumulator, currentValue) => {
-                          accumulator[currentValue.name] = currentValue.version;
+                        accumulator[currentValue.name] = currentValue.version;
                         return accumulator;
-                      },{})
+                      }, {})
                   }
                 );
               }
