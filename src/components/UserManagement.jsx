@@ -56,7 +56,7 @@ const UserManagement = class UserManagement extends React.Component {
             }}
             spinner={<LoadingSpinner />}
             text="Loading...">
-            {JSON.stringify(this.state.user, null, 4)}
+            <pre>{JSON.stringify(this.state.user, null, 4)}</pre>
           </LoadingOverlay>
           <button
             className="btb btn-lg btn-block btn-danger"
