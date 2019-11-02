@@ -7,6 +7,7 @@ import Login from "./Login.jsx";
 import UserManagement from "./UserManagement.jsx";
 import Home from "./Home.jsx";
 import Policy from "./Policy.jsx";
+import CharacterSelect from "./CharacterSelect.jsx";
 
 const AppRoot = class AppRoot extends React.Component {
   constructor(props) {
@@ -78,6 +79,12 @@ const AppRoot = class AppRoot extends React.Component {
                 {...routeProps}
               />
             )}
+          />
+          <AuthorizingRoute
+            path="/characterSelect"
+            authService={this.props.authService}
+            fetchService={this.props.fetchService}
+            component={CharacterSelect}
           />
           <AuthorizingRoute
             path="/userMgmnt"

@@ -64,6 +64,15 @@ const NavBar = class NavBar extends React.Component {
                 <i className="fa fa-github-alt" /> Github
               </a>
             </li>
+            <NavItem
+              to={
+                this.props.characterSelected
+                  ? "/playSilhouette"
+                  : "/characterSelect"
+              }
+              location={this.props.location}>
+              <i className="fa fa-at" /> Silhouette
+            </NavItem>
           </ul>
           <ul className="nav navbar-nav navbar-right">
             <NavItem
