@@ -1,4 +1,4 @@
-import Redirect from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import React from "react";
 import LoadingSpinner from "./LoadingSpinner.jsx";
 import LoadingOverlay from "react-loading-overlay";
@@ -33,7 +33,7 @@ const CharacterSelect = class CharacterSelect extends React.Component {
 
   createCharacter() {
     this.setState({
-      loadingCharacters: false
+      loadingCharacters: true
     });
     this.props.fetchService.getJsonWithAuth(
       "/createCharacter",
@@ -45,10 +45,29 @@ const CharacterSelect = class CharacterSelect extends React.Component {
       () => {}
     );
   }
-
+  selectCharacter(characterId) {
+    this.props.selectCharacter(characterId);
+  }
   render() {
-    if (this.state.redirectToSilhouette) {
+    if (this.props.selectedCharacter !== "") {
       return <Redirect to="/playSilhouette" />;
+    }
+    let characters = [];
+    if (this.state.characters) {
+      for (let i = 0; i < this.state.characters.length; i++) {
+        /* eslint-disable react/no-children-prop */
+        characters.push(
+          <button
+            type="button"
+            className="list-group-item list-group-item-action"
+            key={this.state.characters[i].characterId}
+            onClick={() => {
+              this.selectCharacter(this.state.characters[i].characterId);
+            }}>
+            {this.state.characters[i].name}
+          </button>
+        );
+      }
     }
     return (
       <div className="center-form panel">
@@ -63,10 +82,10 @@ const CharacterSelect = class CharacterSelect extends React.Component {
             }}
             spinner={<LoadingSpinner />}
             text="Loading...">
-            <pre>{JSON.stringify(this.state.characters, null, 4)}</pre>
+            <div className="list-group">{characters}</div>
           </LoadingOverlay>
           <button
-            className="btb btn-lg btn-block btn-danger"
+            className="btb btn-lg btn-block"
             onClick={this.createCharacter}>
             Create Character
           </button>

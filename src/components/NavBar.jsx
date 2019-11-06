@@ -66,7 +66,7 @@ const NavBar = class NavBar extends React.Component {
             </li>
             <NavItem
               to={
-                this.props.characterSelected
+                this.props.selectedCharacter !== ""
                   ? "/playSilhouette"
                   : "/characterSelect"
               }

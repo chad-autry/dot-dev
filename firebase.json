@@ -1,0 +1,49 @@
+{
+  "hosting": {
+    "public": "./target/webapp",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+{
+        "source": "/auth",
+        "function": "auth"
+      },
+      {
+        "source": "/newUser",
+        "function": "createUser"
+      },
+      {
+        "source": "/deleteUser",
+        "function": "deleteUser"
+      },
+      {
+        "source": "/getUser",
+        "function": "getUser"
+      },
+      {
+        "source": "/getCharacters",
+        "function": "getCharacters"
+      },
+      {
+        "source": "/createCharacter",
+        "function": "createCharacter"
+      },
+      {
+        "source": "/getFirebaseLoginToken",
+        "function": "getFirebaseLoginToken"
+      },
+      {
+        "source": "/regenerateView",
+        "function": "regenerateView"
+      },
+
+      { 
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

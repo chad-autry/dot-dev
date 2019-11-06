@@ -8,6 +8,7 @@ import UserManagement from "./UserManagement.jsx";
 import Home from "./Home.jsx";
 import Policy from "./Policy.jsx";
 import CharacterSelect from "./CharacterSelect.jsx";
+import Silhouette from "./Silhouette.jsx";
 
 const AppRoot = class AppRoot extends React.Component {
   constructor(props) {
@@ -34,6 +35,7 @@ const AppRoot = class AppRoot extends React.Component {
     });
     this.state = {
       fetchingPolicyAccepted: false,
+      selectedCharacter: "",
       pendingUserCreation:
         this.props.authService.isAuthenticated() &&
         !!this.props.authService.getPayload().pendingUserCreation,
@@ -50,6 +52,7 @@ const AppRoot = class AppRoot extends React.Component {
           authService={this.props.authService}
           pendingUserCreation={this.state.pendingUserCreation}
           isAuthenticated={this.state.isAuthenticated}
+          selectedCharacter={this.state.selectedCharacter}
           location={this.props.location}
         />
         <Switch>
@@ -85,6 +88,18 @@ const AppRoot = class AppRoot extends React.Component {
             authService={this.props.authService}
             fetchService={this.props.fetchService}
             component={CharacterSelect}
+            selectCharacter={characterId =>
+              this.setState({ selectedCharacter: characterId })
+            }
+            selectedCharacter={this.state.selectedCharacter}
+          />
+          <AuthorizingRoute
+            path="/playSilhouette"
+            authService={this.props.authService}
+            fetchService={this.props.fetchService}
+            selectedCharacter={this.state.selectedCharacter}
+            logoutCharacter={() => this.setState({ selectedCharacter: "" })}
+            component={Silhouette}
           />
           <AuthorizingRoute
             path="/userMgmnt"

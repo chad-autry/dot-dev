@@ -13,7 +13,7 @@ var prodLoaders = [
   // javascript/jsx loader - https://www.npmjs.com/package/babel-loader - without the react-hot loader
   {
     test: /\.jsx?$/,
-    exclude: /node_modules(?!\/client-auth-jwt)/,
+    exclude: /node_modules\/(?!(client-auth-jwt|character-perspective-client)\/).*/,
     loaders: ['babel-loader']
   },
 ]
@@ -33,8 +33,13 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules(?!\/client-auth-jwt)/,
-        use: ['babel-loader']
+        exclude: /node_modules\/(?!(client-auth-jwt|character-perspective-client|react-awesome-svg)\/).*/,
+	                    use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env','@babel/preset-react']
+        }
+      }
       }
     ]
   },

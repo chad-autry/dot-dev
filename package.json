@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "Personal webpage based on frontend boilerplate",
   "scripts": {
-    "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:auth && npm run copy:jquery&& webpack --mode production --config ./webpack-prod.config.js",
+    "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:auth && npm run copy:SVG && npm run copy:jquery&& webpack --mode development --config ./webpack-prod.config.js",
     "eslint:fix": "eslint --fix './src/**/*.js' './src/**/*.jsx'",
     "clean": "rimraf ./target",
     "copy:auth": "copyfiles -f ./src/googleStaticAuth.html ./target/webapp",
     "copy:HTML": "copyfiles -f ./src/index.html ./target/webapp",
+    "copy:SVG": "copyfiles -f ./src/sprites.svg ./target/webapp",
     "copy:jquery": "copyfiles -f ./node_modules/jquery/dist/jquery.min.js ./target/webapp",
     "less": "lessc ./src/less/main.less > ./target/webapp/styles.css",
     "start": "webpack-dev-server  --config ./webpack-prod.config.js --mode development --content-base ./target/webapp --port 8080",
@@ -20,7 +21,9 @@
   },
   "dependencies": {
     "bootstrap": "^3.4.1",
+    "character-perspective-client": "^1.4.0",
     "client-auth-jwt": "^0.7.3",
+    "moment": "^2.24.0",
     "prop-types": "^15.5.10",
     "react-loading-overlay": "^1.0.1",
     "react-router-dom": "^4.0.0"
